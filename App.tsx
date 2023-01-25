@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, Text } from "react-native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+interface Props {
+  name?: string;
+  age?: number
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Child: React.FC<Props> = ({ name, age }) => {
+  return(
+    <>
+      <View>
+        <Text>My name is: {name}</Text>
+        <Text>Age: {age}</Text>
+      </View>
+    </>
+  )
+}
+
+const App: React.FC = () => {
+  return (
+    <>
+      <View>
+        <Text>Hello world</Text>
+        <Child
+          name="Jonathan"
+        />
+      </View>
+    </>
+  )
+};
+
+
+Child.defaultProps = {
+  name: "Emily",
+  age: 30
+}
+
+export default App;
