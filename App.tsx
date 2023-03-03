@@ -1,6 +1,9 @@
 import React, { useState, useCallback } from 'react'
 import { View, Text, Button } from 'react-native'
 import Todo from './screens/Todo'
+import Hooks from './screens/Hooks'
+import Another from './screens/Another'
+import HooksBenAwad from './screens/BenAwad'
 
 interface Props {
   name?: string
@@ -41,6 +44,9 @@ const App: React.FC = () => {
         />
       </View> */}
       <Todo />
+      {/* <Hooks /> */}
+      {/* <Another /> */}
+      {/* <HooksBenAwad /> */}
     </>
   )
 }
